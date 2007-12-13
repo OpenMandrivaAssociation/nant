@@ -1,15 +1,15 @@
 %define name nant
-%define version 0.85
-%define fname %name-%version-src
-%define rel 3
+%define version 0.86
+%define prerel beta1
+%define fname %name-%version-%prerel-src
+%define rel 0.%prerel.1
 
 Summary: NAnt is a build tool for Mono and .NET
 Name: %{name}
 Version: %{version}
 Release: %mkrel %rel
 Epoch: 1
-Source0: http://prdownloads.sourceforge.net/nant/%{fname}.tar.bz2
-Patch: nant-0.85-fix-build.patch
+Source0: http://prdownloads.sourceforge.net/nant/%{fname}.tar.gz
 License: GPL
 Group: Development/Other
 Url: http://nant.sourceforge.net/
@@ -24,8 +24,7 @@ NAnt is a free .NET build tool. In theory it is kind of like make
 without make's wrinkles. In practice it's a lot like Ant.
 
 %prep
-%setup -q -n %name-%version
-%patch -p1
+%setup -q -n %name-%version-%prerel
 find . -type d|xargs chmod 755
 find . -type f|xargs chmod 644
 # remove DOS line endings
