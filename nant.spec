@@ -2,7 +2,7 @@
 %define version 0.86
 %define prerel beta1
 %define fname %name-%version-%prerel-src
-%define rel 0.%prerel.1
+%define rel 0.%prerel.2
 
 Summary: NAnt is a build tool for Mono and .NET
 Name: %{name}
@@ -10,6 +10,8 @@ Version: %{version}
 Release: %mkrel %rel
 Epoch: 1
 Source0: http://prdownloads.sourceforge.net/nant/%{fname}.tar.gz
+#gw from cvs, fix upstream bug 1850383
+Patch: nant-fix-useruntimeengine-override.patch
 License: GPL
 Group: Development/Other
 Url: http://nant.sourceforge.net/
@@ -27,7 +29,10 @@ without make's wrinkles. In practice it's a lot like Ant.
 find . -type d|xargs chmod 755
 find . -type f|xargs chmod 644
 # remove DOS line endings
-find doc -type f |xargs perl -pi -e "s/\r\n/\n/"
+find doc src -type f |xargs perl -pi -e "s/\r\n/\n/"
+cd src/NAnt.Core/Tasks/
+%patch -p0 -b .useruntimeengine
+cd ../../..
 
 %build
 #gw to find the log4net.dll
