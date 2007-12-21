@@ -15,6 +15,7 @@ Patch: nant-fix-useruntimeengine-override.patch
 License: GPL
 Group: Development/Other
 Url: http://nant.sourceforge.net/
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 #gw required for mono.pc
 Requires: mono-devel
 BuildRequires: mono-devel
