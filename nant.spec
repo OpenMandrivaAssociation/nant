@@ -4,7 +4,7 @@
 %define fname %name-%version-%prerel-src
 %define rel 0.%prerel.2
 
-Summary: NAnt is a build tool for Mono and .NET
+Summary: Build tool for Mono and .NET
 Name: %{name}
 Version: %{version}
 Release: %mkrel %rel
