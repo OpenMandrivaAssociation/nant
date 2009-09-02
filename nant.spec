@@ -2,7 +2,7 @@
 %define version 0.86
 %define prerel beta1
 %define fname %name-%version-%prerel-src
-%define rel 0.%prerel.2
+%define rel 0.%prerel.3
 
 Summary: Build tool for Mono and .NET
 Name: %{name}
