@@ -5,7 +5,7 @@
 Summary: Build tool for Mono and .NET
 Name: %{name}
 Version: %{version}
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch: 1
 Source0: http://prdownloads.sourceforge.net/nant/%{fname}.tar.gz
 License: GPL
