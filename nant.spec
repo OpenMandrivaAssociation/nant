@@ -1,18 +1,18 @@
 %define name nant
-%define version 0.90
+%define version 0.91
 %define fname %name-%version-src
 
 Summary: Build tool for Mono and .NET
 Name: %{name}
 Version: %{version}
-Release: %mkrel 3
+Release: %mkrel 1
 Epoch: 1
 Source0: http://prdownloads.sourceforge.net/nant/%{fname}.tar.gz
-Patch0: nant-0.90-no_ndoc.patch
+Patch0: nant-0.91-no_ndoc.patch
 Patch1: nant-0.90-no_sharpcvslib.patch
-Patch2: nant-0.90-system_log4net.patch
+Patch2: nant-0.91-system_log4net.patch
 Patch3: nant-0.90-system_nunit.patch
-Patch4: nant-0.90-system_sharpziplib.patch
+Patch4: nant-0.91-system_sharpziplib.patch
 License: GPL
 Group: Development/Other
 Url: http://nant.sourceforge.net/
@@ -42,6 +42,8 @@ find lib -name "*SharpCvsLib*.dll" | xargs rm
 find lib -name "scvs.exe" | xargs rm
 find lib -name "*SharpZipLib*.dll" | xargs rm
 rm -rf lib/*
+mkdir -p lib/common/neutral
+cp /usr/lib/mono/log4net/log4net.dll lib/common/neutral
 
 %build
 make prefix=%_prefix
@@ -63,7 +65,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-%doc README.txt doc/* examples
+%doc README.txt examples
+%doc %_datadir/doc/NAnt
 %_bindir/%name
 %_datadir/NAnt/
 %_datadir/pkgconfig/nant.pc
