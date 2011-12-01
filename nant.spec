@@ -49,7 +49,7 @@ cp /usr/lib/mono/log4net/log4net.dll lib/common/neutral
 make prefix=%_prefix
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall
 perl -pi -e "s°%buildroot°°" %buildroot%_bindir/%name
 find examples -name \*.dll -o -name \*.exe|xargs rm -f
@@ -61,7 +61,7 @@ perl -pi -e "s^%buildroot^^" %buildroot%_bindir/nant
 mv %buildroot%_prefix/lib*/pkgconfig %buildroot%_datadir
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
