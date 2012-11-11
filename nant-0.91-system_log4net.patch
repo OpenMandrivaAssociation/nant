@@ -1,0 +1,42 @@
+--- nant-0.91/Makefile.0002~	2011-10-24 09:54:44.000000000 +0200
++++ nant-0.91/Makefile	2011-10-24 09:56:46.159532948 +0200
+@@ -72,7 +72,7 @@ run-test: bootstrap
+ 	$(NANT) $(TARGET_FRAMEWORK) -f:NAnt.build test
+ 	
+ bootstrap/NAnt.exe:
+-	$(MCS) $(DEBUG) -target:exe -define:$(DEFINE) -out:bootstrap${DIRSEP}NAnt.exe -r:bootstrap${DIRSEP}log4net.dll \
++	$(MCS) $(DEBUG) -target:exe -define:$(DEFINE) -out:bootstrap${DIRSEP}NAnt.exe -pkg:log4net \
+ 		$(SYSCONFIGURATION) -recurse:src${DIRSEP}NAnt.Console${DIRSEP}*.cs src${DIRSEP}CommonAssemblyInfo.cs
+ 	
+ 
+--- nant-0.91/src/NAnt.Console/NAnt.Console.build.0002~	2011-10-04 06:17:18.000000000 +0200
++++ nant-0.91/src/NAnt.Console/NAnt.Console.build	2011-10-24 09:54:44.620600437 +0200
+@@ -32,10 +32,12 @@
+                 <include name="../CommonAssemblyInfo.cs" />
+             </sources>
+             <references>
+-                <include name="${build.dir}/bin/log4net.dll" />
+                 <include name="System.Configuration.dll" />
+                 <include name="System.Xml.dll" />
+             </references>
++            <pkg-references>
++                <package name="log4net"/>
++            </pkg-references>
+             <resources>
+                 <include name="*.resx"/>
+             </resources>
+--- nant-0.91/src/NAnt.Core/NAnt.Core.build.0002~	2011-09-25 23:55:42.000000000 +0200
++++ nant-0.91/src/NAnt.Core/NAnt.Core.build	2011-10-24 09:54:44.620600437 +0200
+@@ -27,9 +27,11 @@
+                 <include name="Resources/**/*" />
+             </resources>
+             <references>
+-                <include name="${build.dir}/bin/log4net.dll"/>
+                 <include name="System.Web.dll"/>
+             </references>
++            <pkg-references>
++                <package name="log4net"/>
++            </pkg-references>
+         </csc>
+     </target>
+ </project>

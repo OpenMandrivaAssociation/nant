@@ -1,0 +1,22 @@
+--- nant-0.91/Makefile.0000~	2011-10-04 06:19:34.000000000 +0200
++++ nant-0.91/Makefile	2011-10-24 09:54:15.228596221 +0200
+@@ -96,7 +96,7 @@ bootstrap/NAnt.Core.dll:
+ bootstrap/NAnt.DotNetTasks.dll:
+ 	$(RESGEN)  src/NAnt.DotNet/Resources/Strings.resx bootstrap/NAnt.DotNet.Resources.Strings.resources
+ 	$(MCS) $(DEBUG) -target:library -warn:0 -define:$(DEFINE) -out:bootstrap/NAnt.DotNetTasks.dll \
+-		-r:./bootstrap/NAnt.Core.dll -r:bootstrap/lib/common/neutral/NDoc.Core.dll \
++		-r:./bootstrap/NAnt.Core.dll \
+ 		-recurse:src${DIRSEP}NAnt.DotNet${DIRSEP}*.cs -resource:bootstrap/NAnt.DotNet.Resources.Strings.resources \
+ 		src${DIRSEP}CommonAssemblyInfo.cs
+ 
+--- nant-0.91/src/NAnt.DotNet/NAnt.DotNet.build.0000~	2010-02-17 06:08:02.000000000 +0100
++++ nant-0.91/src/NAnt.DotNet/NAnt.DotNet.build	2011-10-24 09:53:58.621625666 +0200
+@@ -22,8 +22,6 @@
+             </sources>
+             <references>
+                 <include name="${build.dir}/bin/NAnt.Core.dll" />
+-                <include name="${nant::scan-probing-paths(build.dir + '/bin','NDoc.ExtendedUI.dll')}" />
+-                <include name="${nant::scan-probing-paths(build.dir + '/bin','NDoc.Core.dll')}" />
+             </references>
+             <resources prefix="NAnt.DotNet" dynamicprefix="true">
+                 <include name="Resources/**/*" />
