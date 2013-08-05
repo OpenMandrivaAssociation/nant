@@ -23,7 +23,7 @@ without make's wrinkles. In practice it's a lot like Ant.
 %package devel
 Summary:	The pkgconfig for %{name}
 Group:		Development/Other
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{EVRD}
 
 %description devel
 The pkgconfig for %{name}.
