@@ -29,7 +29,8 @@ Requires:	%{name} = %{EVRD}
 The pkgconfig for %{name}.
 
 %prep
-%setup -qn %{name}-%{version}-nightly-2015-11.10
+%setup -qn %{name}-%{version}-nightly-2015-11-10
+
 %apply_patches
 find . -type d|xargs chmod 755
 find . -type f|xargs chmod 644
