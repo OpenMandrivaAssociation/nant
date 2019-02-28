@@ -1,8 +1,8 @@
 Summary:	Build tool for Mono and .NET
 Name:		nant
 Epoch:		1
-Version:	0.91
-Release:	12
+Version:	0.92
+Release:	1
 License:	GPLv2
 Group:		Development/Other
 Url:		http://nant.sourceforge.net/
