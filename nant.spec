@@ -1,15 +1,15 @@
 Summary:	Build tool for Mono and .NET
 Name:		nant
 Epoch:		1
-Version:	0.92
+Version:	0.93
 Release:	1
 License:	GPLv2
 Group:		Development/Other
 Url:		http://nant.sourceforge.net/
-Source0:	http://prdownloads.sourceforge.net/nant/%{name}-%{version}-src.tar.gz
-Patch0:		nant-0.91-no_ndoc.patch
-Patch1:		nant-0.90-no_sharpcvslib.patch
-Patch2:		nant-0.91-system_log4net.patch
+Source0:	http://prdownloads.sourceforge.net/nant/%{name}-src.tar.gz
+#Patch0:		nant-0.91-no_ndoc.patch
+#Patch1:		nant-0.90-no_sharpcvslib.patch
+#Patch2:		nant-0.91-system_log4net.patch
 Patch3:		nant-0.90-system_nunit.patch
 Patch4:		nant-0.91-system_sharpziplib.patch
 BuildArch:	noarch
