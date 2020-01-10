@@ -30,7 +30,7 @@ The pkgconfig for %{name}.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 find . -type d|xargs chmod 755
 find . -type f|xargs chmod 644
 # remove DOS line endings
