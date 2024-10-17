@@ -5,7 +5,7 @@ Version:	0.91
 Release:	12
 License:	GPLv2
 Group:		Development/Other
-Url:		http://nant.sourceforge.net/
+Url:		https://nant.sourceforge.net/
 Source0:	http://prdownloads.sourceforge.net/nant/%{name}-%{version}-src.tar.gz
 Patch0:		nant-0.91-no_ndoc.patch
 Patch1:		nant-0.90-no_sharpcvslib.patch
