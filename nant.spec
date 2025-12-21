@@ -13,6 +13,7 @@ Patch2:		nant-0.91-system_log4net.patch
 Patch3:		nant-0.90-system_nunit.patch
 Patch4:		nant-0.91-system_sharpziplib.patch
 BuildArch:	noarch
+BuildRequires:	make
 BuildRequires:	pkgconfig(log4net)
 BuildRequires:	pkgconfig(mono)
 
